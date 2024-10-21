@@ -28,7 +28,6 @@ public class TasksRoute extends RouteBuilder {
         // Configuring the REST DSL
         restConfiguration()
                 .port(8091)
-                .contextPath(contextPath)
                 .component("servlet")
                 .bindingMode(RestBindingMode.auto);
 
@@ -41,7 +40,7 @@ public class TasksRoute extends RouteBuilder {
 
         // Defining the REST route for /tasks
         rest("/tasks")
-            .get()  // GET all tasks
+            .get()
             .to("direct:getTasks");
 
         // Route implementations for each operation
